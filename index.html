@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>VUE TODO LIST</title>
+</head>
+<body>
+    <main id="app">
+      <!--INIZIO APP-->  
+        <section class="container">
+            <!--TITOLO-->
+            <h1 class="happyness-title">COME ESSERE FELICI</h1>
+            <!--AREA FORM-->
+          <div class="create-task">
+            <form class="form" novalidate @submit="e => e.preventDefault()">
+              <input type="text" placeholder="Aggiungi buona azione" v-model="valueTask" class="input-task" />
+              <button type="submit" class="button-form" @click="onSubmitForm">Aggiungi atti di bontà per essere felice</button>
+            </form>
+          </div>
+          <!--SEPARATORE-->
+          <hr class="separator">
+          <!--TASKS-->
+          <div v-if="tasksList.length" class="list-tasks">
+            <p v-for="(task, index) in tasksList" :class="taskClass">
+              <input type="checkbox" class="checkbox" v-model="task.done" />
+              <span>{{ task.name }}</span>
+              <span class="remove-task" @click="onRemoveTask(index)">
+                <span>❌</span>
+              </span>
+            </p>
+          </div>
+        <!--MESSAGE BOX-->
+          <div class="message-box">
+            <p v-if="tasksList.length === 0">Sei a corto di buone azioni! Inseriscine altre!</p>
+          </div>
+        </section>
+      </main>
+    <!--VUE JS-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!--JS-->
+    <script src="./js/main.js"></script>
+
+</body>
+</html>
