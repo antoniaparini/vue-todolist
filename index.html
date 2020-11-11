@@ -12,12 +12,12 @@
       <!--INIZIO APP-->  
         <section class="container">
             <!--TITOLO-->
-            <h1 class="happyness-title">COME ESSERE FELICI</h1>
+            <h1 class="happyness-title main-title">COME ESSERE FELICI</h1>
             <!--AREA FORM-->
           <div class="create-task">
             <form class="form" novalidate @submit="e => e.preventDefault()">
               <input type="text" placeholder="Aggiungi buona azione" v-model="valueTask" class="input-task" />
-              <button type="submit" class="button-form" @click="onSubmitForm">Aggiungi atti di bontà per essere felice</button>
+              <button type="submit" class="button-form button-form-med" @click="onSubmitForm">Aggiungi atti di bontà per essere felice</button>
             </form>
           </div>
           <!--SEPARATORE-->
@@ -26,7 +26,8 @@
           <div v-if="tasksList.length" class="list-tasks">
             <p v-for="(task, index) in tasksList" :class="taskClass">
               <input type="checkbox" class="checkbox" v-model="task.done" />
-              <span>{{ task.name }}</span>
+            <!--MEDIAQUERY-->  
+              <span class="span-text hide">{{ task.name }}</span>
               <span class="remove-task" @click="onRemoveTask(index)">
                 <span>❌</span>
               </span>

@@ -126,3 +126,49 @@ main {
 .remove-task > span {
   cursor: pointer;
 }
+
+/*MEDIA QUERY*/
+/*TABLET*/
+
+@media screen and (max-width: 599px) {
+  .main-title {
+    font-size: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .button-form-med {
+    padding: 5px 5px;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: burlywood;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .message-box{
+    text-align:center;
+    color:burlywood; 
+    font-size: 30px;
+}
+  .span-text{
+    font-size: 14px;
+  }
+  
+}
+
+/*MEDIA QUERY*/
+/*OTHER SCREENS*/
+
+@media screen and (min-width: 600px){
+
+  .main-title {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .span-text{
+    font-size: 18px;
+  }
+}
